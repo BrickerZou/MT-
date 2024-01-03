@@ -1,0 +1,40 @@
+
+.content{
+    display: flex;
+    /*  */
+    /* flex: 1 1 auto; */
+    height: 100%;
+    /* overflow-x: hidden */
+}
+.content .list-menu{
+    background-color: #f5f5f5;
+    width: 95px;
+    height: 100%;
+    z-index: 1;
+}
+.content .list-menu-item{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    font-size: 12px;
+    padding: 10px;
+}
+.content .list-menu-item.active{
+    background-color: #fff;
+    font-weight: 600;
+
+}
+
+.content .list-content{
+    width: 100%;
+    overflow: auto;
+}
+.list-content .cate-title{
+    padding: 8px;
+    font-size: 15px;
+
+}
+.list-content .cate-list{
+    display: flex;
+    flex-direction: column;
+}

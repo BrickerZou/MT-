@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { createContext, useContext, useEffect, useState } from 'react';
 import _ from 'lodash';
-import DemoPage from './component/DempPage'
+import Index from './Component'
 
 const heimaApi="http://geek.itheima.net/v1_0/channels"
 const MsgContext=createContext();//跨层传递数据
@@ -40,33 +40,33 @@ const handleSort=()=>{
 
 
   return (
-    <MsgContext.Provider value={value}>
-    <div className="App">
-      <ul>
-      { userList.map((item)=>{return <li key={item.id}>{item.name}<button onClick={()=>{handleDel(item.id)}}>Click删除</button></li> })}  
-      </ul>
-      <ul>
-      {/* { List.map((item)=>{return <li key={item.id}>{item.name}</li> })}   */}
-      </ul>
+    // <MsgContext.Provider value={value}>
+    // <div className="App">
+    //   <ul>
+    //   { userList.map((item)=>{return <li key={item.id}>{item.name}<button onClick={()=>{handleDel(item.id)}}>Click删除</button></li> })}  
+    //   </ul>
+    //   <ul>
+    //   {/* { List.map((item)=>{return <li key={item.id}>{item.name}</li> })}   */}
+    //   </ul>
      
-      <button onClick={handleAdd}>Click增加</button>
-      <button onClick={handleSort}>排序</button>
+    //   <button onClick={handleAdd}>Click增加</button>
+    //   <button onClick={handleSort}>排序</button>
 
-      <input 
-      value={value} 
-      onChange={(e)=>{
-        setValue(e.target.value);
-      }}
-      type='text'
-      />
+    //   <input 
+    //   value={value} 
+    //   onChange={(e)=>{
+    //     setValue(e.target.value);
+    //   }}
+    //   type='text'
+    //   />
 
      
 
-    </div>
-    <A></A>
+    // </div>
+    // <A></A>
     
-    <DemoPage></DemoPage>
-    </MsgContext.Provider>
+    <Index></Index>
+    // </MsgContext.Provider>
   );
 }
 
