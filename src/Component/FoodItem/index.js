@@ -1,6 +1,8 @@
 import React from 'react'
 import './index.css'
 import {PlusCircleOutlined} from '@ant-design/icons'
+import { useDispatch,useSelector } from 'react-redux'
+import { addCart } from '../../store/modules/takeaway';
 export default function FoodItem({
   id,
   picture,
@@ -14,6 +16,9 @@ export default function FoodItem({
   tag,
   count
 }) {
+    const dispatch = useDispatch();
+    // const {cartList} = useSelector(state=>state.foods)
+
   return (
     <div className='cate-goods'>
         <div className='goods-img'>
@@ -26,7 +31,9 @@ export default function FoodItem({
             <div className='goods-sales-volume'><span>月售{month_saled}</span>&nbsp;&nbsp;<span>{like_ratio_desc}</span>  </div>
             <div className='goods-price-count'>
                 <div className='goods-price'>￥{price}</div>
-                <div className='goods-count'><PlusCircleOutlined style={{fontSize:"18px",color:"#ffcc33"}} /></div>
+                <div className='goods-count' onClick={()=>{
+                   dispatch(addCart({"id":id,"name":name,"price":price,"picture":picture,"count":1}))
+                }}><PlusCircleOutlined style={{fontSize:"18px",color:"#ffcc33"}} /></div>
             </div>
         </div>
     </div>

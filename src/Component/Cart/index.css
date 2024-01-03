@@ -21,6 +21,11 @@
     background-repeat: no-repeat;
     background-size: contain;
 }
+.icon.fill {
+    background: url(https://zqran.gitee.io/images/waimai/cart-2.png) ;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
 .cart .icon .cartCornerMark{
     position: absolute;
     right: 13px;
@@ -35,6 +40,7 @@
     width: 30px;
     height: 30px;
 }
+
 .cart .main{
     flex: 1 1 auto;
 }
@@ -62,3 +68,103 @@
     line-height: 50px;
     color: #f3f1f1;
 }
+.cart .goToPreview {
+    color: #333;
+    font-weight: 500;
+    font-size: 14px;
+    color: #222426;
+    height: 51px;
+    line-height: 50px;
+    background: #f8c74e;
+    background-image: linear-gradient(135deg, #ffdd33 0%, #ffbb33 100%);
+    border-radius: 0 22.5px 22.5px 0;
+    width: 84px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  .cart-list{
+    position: fixed;
+    z-index: -1;
+    bottom: 0px;
+    padding-bottom: 70px;
+    left: 0px;
+    width: 100%;
+    border-radius: 10px 0px;
+    background-color: white;
+    opacity: 90%;
+    /* f */
+  }
+  
+  .scrollArea {
+    max-height: 350px;
+    overflow: scroll;
+    border-top: 1px solid rgba(216, 216, 216, 0.3);
+
+    &::after {
+      content: '';
+      display: block;
+      height: 90px;
+    }
+
+    .cartItem {
+      position: relative;
+      display: flex;
+      padding: 16px 0;
+      margin: 0 15px;
+      box-sizing: border-box;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        height: 1px;
+        left: 70px;
+        right: 0;
+        background-color: rgba(232, 232, 232, 0.3);
+      }
+    }
+    .shopPic {
+      width: 60px;
+      height: 60px;
+      border-radius: 6px;
+    }
+    .main {
+      margin-left: 10px;
+      padding-right: 10px;
+      flex: auto;
+    }
+    .skuInfo {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+    .name {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 20px;
+      color: #33312e;
+    }
+    .payableAmount {
+      height: 29px;
+      margin-top: 15px;
+      display: flex;
+      align-items: flex-start;
+      font-weight: 600;
+      color: #fb4e44;
+    }
+    .yuan {
+      font-size: 12px;
+      line-height: 16.5px;
+      margin-top: 10px;
+      width: 11.5px;
+    }
+    .price {
+      font-size: 18px;
+      line-height: 25px;
+      margin-top: 4px;
+    }
+    .skuBtnWrapper {
+      width: 70px;
+      margin-top: 51.5px;
+    }
+  }

@@ -9,7 +9,6 @@ export default function DempPage() {
     
 
   return (
-   
     <div className='home'>
         <nav className='nav'> 
           <Nav></Nav>

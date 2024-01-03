@@ -1,5 +1,6 @@
 
 .content{
+    /* 自动扩充 */
     display: flex;
     /*  */
     /* flex: 1 1 auto; */
@@ -27,7 +28,9 @@
 
 .content .list-content{
     width: 100%;
+    /* ********自动伸展 */
     overflow: auto;
+    margin-bottom: 100px;
 }
 .list-content .cate-title{
     padding: 8px;

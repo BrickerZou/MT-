@@ -1,6 +1,6 @@
 .cate-goods{
     display: flex;
-    padding-bottom: 28px
+    padding-bottom: 22px
     /* justify-content: space-around; */
 }
 .cate-goods .goods-img img{
