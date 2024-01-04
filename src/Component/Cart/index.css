@@ -165,6 +165,17 @@
     }
     .skuBtnWrapper {
       width: 70px;
-      margin-top: 51.5px;
+      margin-top: 21.5px;
     }
+    .skuBtnWrapper .count{
+      font-size: 17px;
+    }
+  }
+
+
+
+  /* 修改antd样式 */
+  .ant-btn-primary {
+    color: #2d2d2d;
+    background: #ffd733 !important;
   }
