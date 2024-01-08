@@ -11,9 +11,11 @@
 .home .content-wrap{
     height: calc(100vh - 40px);
     width: 100%;
+   
 }
 .home .cartContainer{
     position: fixed;
+    bottom: 10px;
     z-index: 2;
     width: 100%;
 }

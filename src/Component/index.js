@@ -4,6 +4,8 @@ import './index.css'
 import Cart from './Cart'
 import Nav from './NavBar';
 import Menu from './Menu';
+import Comment from './Comment';
+import { Outlet } from 'react-router-dom';
 
 export default function DempPage() {
     
@@ -13,10 +15,15 @@ export default function DempPage() {
         <nav className='nav'> 
           <Nav></Nav>
         </nav>
-        <div className='content-wrap'><Menu></Menu></div>
-        <div className='cartContainer'>
-          <Cart></Cart>
-        </div>
+        {/* 点菜、评价 */}
+        <div className='content-wrap'>
+          {/* <Outlet /> */}
+          {/* An <Outlet> should be used in parent route elements to render their child route elements. */}
+          {/* <Menu></Menu> */}
+          <Outlet></Outlet>
+          </div>
+        
+        
        
     </div>
   )

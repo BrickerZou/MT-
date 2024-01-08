@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './index.css'
+import Cart from '../Cart'
 import FoodItem from '../FoodItem'
 import { useDispatch, useSelector } from 'react-redux'
 import { changeActiveIndex, fetchFoodsList } from '../../store/modules/takeaway'
@@ -73,18 +74,13 @@ export default function Menu() {
     //     ]
     const dispatch = useDispatch();
     useEffect(()=>{
-        // const getMenuList=async ()=>{
-        //     fetch('/meituan/menu').then(res => res.json().then(data=>{
-        //         console.log(data.takeaway[0].foods);
-        //         return data.takeaway[0].foods;
-        //    })) 
-        // }
-        // getMenuList();
+        // 请求食物菜单
         dispatch(fetchFoodsList())
         
     },[dispatch])
-    const {foodsList,activeIndex}=useSelector(state=>state.foods);
-    console.log(foodsList)
+    const {foodsList}=useSelector(state=>state.foods);
+    const [activeIndex,setActiveIndex]=useState(0);
+
 
   return (
     <div className='content'>
@@ -92,7 +88,9 @@ export default function Menu() {
         {foodsList.map((tab,index)=>{
             return <div key={tab.tag} className={`list-menu-item ${index===activeIndex&&'active'}`} 
             onClick={()=>{
-                dispatch(changeActiveIndex(index))
+                // dispatch(changeActiveIndex(index))
+                setActiveIndex(index);
+                
             }}>
             {tab.name}    
             </div>
@@ -120,6 +118,9 @@ export default function Menu() {
             })}
             </div>
 
+        </div>
+        <div className='cartContainer'>
+          <Cart></Cart>
         </div>
     </div>
   )
