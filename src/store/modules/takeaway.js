@@ -2,6 +2,7 @@
 
 import { createSlice } from "@reduxjs/toolkit"
 import axios from "axios"
+import { request } from "../../utils"
 
 const foodsStore = createSlice({
   name: 'foods',
@@ -56,12 +57,24 @@ const foodsStore = createSlice({
 
 // 异步获取部分
 const { setFoodsList, changeActiveIndex, addCart, increCount, decreCount, clearCart } = foodsStore.actions
+
+
 const fetchFoodsList = () => {
+  // 调用 fetchFoodsList 时，Redux 会识别它是一个函数，并且自动传入 dispatch 给这个函数。
   return async (dispatch) => {
     // 编写异步逻辑
-    const res = await axios.get('meituan/menu')
+    const res= await request('get','/meituan/menu').then(data => {
+      // 处理返回的数据
+      console.log('Response data:', data);
+      return data;
+    })
+    .catch(error => {
+      // 处理请求错误
+      console.error('Error:', error);
+    });
+    console.log(res);
     // 调用dispatch函数提交action
-    dispatch(setFoodsList(res.data))
+    dispatch(setFoodsList(res))
   }
 }
 
@@ -70,3 +83,4 @@ export { fetchFoodsList, changeActiveIndex, addCart, increCount, decreCount, cle
 const reducer = foodsStore.reducer
 
 export default reducer
+
